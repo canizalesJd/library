@@ -1,5 +1,5 @@
 const myLibrary = [];
-const form = document.querySelector(".new-book-form");
+const form = document.querySelector(".form-modal");
 
 class Book {
 	constructor(title, author, pages, read = false) {

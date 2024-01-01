@@ -1,10 +1,140 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--primary-100: #c21d03;
+	--primary-200: #fd5732;
+	--primary-300: #ffb787;
+	--accent-100: #393939;
+	--accent-200: #bebebe;
+	--text-100: #232121;
+	--text-200: #4b4848;
+	--bg-100: #fbfbfb;
+	--bg-200: #f1f1f1;
+	--bg-300: #c8c8c8;
+}
 
 body {
 	font-family: "Montserrat", sans-serif;
 	font-size: 18px;
+	width: 100vw;
+	min-height: 100vh;
+	background: var(--bg-100);
+	color: var(--text-100);
+}
+
+header {
+	padding: 20px;
+	background: var(--accent-100);
+	color: #fafafa;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 60%;
+	margin: auto;
+}
+
+.new-book-form-container {
+	display: block;
+	background-color: var(--bg-100);
+	border-radius: 10px;
+	width: 300px;
+	max-width: 95vw;
+	min-height: 300px;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+}
+
+.form-title {
+	font-family: inherit;
+	font-weight: 700;
+	text-align: center;
+	margin: 10px;
 }
 
 .new-book-form {
-	display: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	max-width: 90%;
+	margin: auto;
+	padding: 20px 0px;
+	min-width: 200px;
+}
+
+.form-input {
+	border: 2px solid var(--accent-200);
+	outline: none;
+	border-radius: 6px;
+	padding: 10px 14px;
+	width: 90%;
+	font-family: inherit;
+	margin: 5px 0px;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+input[type="submit"] {
+	border: none;
+	outline: none;
+}
+
+.read-check-container {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 10px 0px;
+	align-self: flex-start;
+	width: 90%;
+	margin: auto;
+}
+
+.read-check-container > input {
+	margin-left: 10px;
+}
+
+.button {
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background: transparent;
+	cursor: pointer;
+	font-weight: 700;
+	font-family: inherit;
+	padding: 10px;
+	font-size: 1rem;
+}
+
+.submit-btn {
+	background-color: var(--primary-200);
+	color: #ffffff;
+	width: 90%;
+	border-radius: 10px;
+	padding: 12px;
+	margin-top: 10px;
+}
+
+.submit-btn:hover {
+	transition: 200ms;
+	background-color: var(--primary-100);
+}
+
+.form-modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgb(0, 0, 0, 0.7);
+	width: 100vw;
+	height: 100vh;
 }
