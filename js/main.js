@@ -36,8 +36,8 @@ const displayLibrary = () => {
 			<p>Pages: ${book.pages}</p>
 			${
 				book.read
-					? "<button class='status-btn read'>Read</button>"
-					: "<button class='status-btn not-read'>Not Read</button>"
+					? `<button class="status-btn read" onclick="changeStatus(false, ${index})">Read</button>`
+					: `<button class="status-btn not-read" onclick="changeStatus(true, ${index})">Not Read</button>`
 			}
 			<button class="remove-btn" onclick="removeBook(${index})">Remove</button>
 		</div>	
@@ -48,6 +48,11 @@ const displayLibrary = () => {
 };
 
 displayLibrary();
+
+const changeStatus = (status, index) => {
+	myLibrary[index].read = status;
+	displayLibrary();
+};
 
 const resetForm = () => {
 	document.getElementById("title").value = "";
@@ -66,7 +71,6 @@ form.addEventListener("submit", (e) => {
 	const read = document.getElementById("read").checked;
 	addBookToLibrary(title, author, pages, read);
 	resetForm();
-	console.log(myLibrary);
 });
 
 const addButton = document.getElementById("add-book");
