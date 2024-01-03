@@ -36,10 +36,10 @@ const displayLibrary = () => {
 			<p>Pages: ${book.pages}</p>
 			${
 				book.read
-					? `<button class="status-btn read" onclick="changeStatus(false, ${index})">Read</button>`
-					: `<button class="status-btn not-read" onclick="changeStatus(true, ${index})">Not Read</button>`
+					? `<button class="status-btn read" onclick="Book.prototype.changeStatus(${index}, false)">Read</button>`
+					: `<button class="status-btn not-read" onclick="Book.prototype.changeStatus(${index}, true)">Not Read</button>`
 			}
-			<button class="remove-btn" onclick="removeBook(${index})">Remove</button>
+			<button class="remove-btn" onclick="Book.prototype.removeBook(${index})">Remove</button>
 		</div>	
 		`;
 			booksDisplay.appendChild(bookCard);
@@ -49,8 +49,13 @@ const displayLibrary = () => {
 
 displayLibrary();
 
-const changeStatus = (status, index) => {
+Book.prototype.changeStatus = function (index, status) {
 	myLibrary[index].read = status;
+	displayLibrary();
+};
+
+Book.prototype.removeBook = function (index) {
+	myLibrary.splice(index, 1);
 	displayLibrary();
 };
 
