@@ -33,7 +33,7 @@ body {
 
 header {
 	padding: 20px;
-	background: var(--accent-100);
+	background: var(--bg-200);
 	color: var(--text-100);
 }
 
@@ -273,4 +273,39 @@ button {
 
 .not-read:hover {
 	background: #923a3a;
+}
+
+.logo-img {
+	max-height: 70px;
+	user-select: none;
+	-webkit-user-drag: none;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 25px;
+	min-width: 100%;
+	text-align: center;
+	transition: 200ms;
+	color: var(--text-100);
+	background: var(--bg-200);
+}
+
+footer a {
+	margin: 0px 5px;
+	color: inherit;
+}
+
+footer img {
+	height: 30px;
+	transition: transform 0.3s ease-in-out;
+}
+
+footer img:hover {
+	transform: scale(1.2);
 }
