@@ -1,6 +1,7 @@
 const myLibrary = [];
 const form = document.querySelector(".form-modal");
 const formContainer = document.querySelector(".new-book-form-container");
+const booksDisplay = document.querySelector(".books-display");
 
 class Book {
 	constructor(title, author, pages, read = false) {
@@ -19,13 +20,42 @@ const formControl = (display = false) => {
 	display ? (form.style.display = "block") : (form.style.display = "none");
 };
 
+const displayLibrary = () => {
+	booksDisplay.innerHTML = "";
+	if (myLibrary.length === 0) {
+		booksDisplay.innerHTML = "<p class='no-books'>No books in library...</p>";
+		return;
+	} else {
+		myLibrary.forEach((book, index) => {
+			const bookCard = document.createElement("div");
+			bookCard.classList.add("book-card");
+			bookCard.innerHTML = `
+		<div class="book-card-content">
+			<h2>${book.title}</h2>
+			<p>Author: ${book.author}</p>
+			<p>Pages: ${book.pages}</p>
+			${
+				book.read
+					? "<button class='status-btn read'>Read</button>"
+					: "<button class='status-btn not-read'>Not Read</button>"
+			}
+			<button class="remove-btn" onclick="removeBook(${index})">Remove</button>
+		</div>	
+		`;
+			booksDisplay.appendChild(bookCard);
+		});
+	}
+};
+
+displayLibrary();
+
 const resetForm = () => {
 	document.getElementById("title").value = "";
 	document.getElementById("author").value = "";
 	document.getElementById("pages").value = "";
 	document.getElementById("read").checked = false;
 	formControl(false);
-	// displayLibrary();
+	displayLibrary();
 };
 
 form.addEventListener("submit", (e) => {

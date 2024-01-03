@@ -17,6 +17,8 @@
 	--bg-100: #e0f2f1;
 	--bg-200: #d0ebea;
 	--bg-300: #ffffff;
+	--read: #26a66c;
+	--not-read: #a62626;
 }
 
 body {
@@ -105,6 +107,10 @@ input[type="submit"] {
 }
 
 button {
+	font-family: inherit;
+	color: inherit;
+	font-weight: 700;
+	font-size: 1rem;
 	background: transparent;
 	outline: none;
 	cursor: pointer;
@@ -139,7 +145,7 @@ button {
 }
 
 .form-modal {
-	/* display: none; */
+	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -149,12 +155,14 @@ button {
 }
 
 .closing-btn {
+	width: 30px;
+	height: 30px;
 	margin-top: 10px;
 	position: absolute;
 	top: 0;
 	right: 10px;
 	border-radius: 100%;
-	padding: 4px;
+	padding: 2px;
 	background-color: var(--primary-100);
 	color: #fafafa;
 }
@@ -178,4 +186,89 @@ button {
 	transition: 300ms;
 	background: var(--text-100);
 	color: var(--bg-100);
+}
+
+.books-display {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	justify-content: center;
+	width: 60%;
+	max-width: 95vw;
+	margin: auto;
+}
+
+.book-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 20px;
+	border-radius: 10px;
+	background: var(--bg-300);
+	box-shadow: 1px 3px 8px 0px rgba(0, 0, 0, 0.45);
+	-webkit-box-shadow: 1px 3px 8px 0px rgba(0, 0, 0, 0.45);
+	-moz-box-shadow: 1px 3px 8px 0px rgba(0, 0, 0, 0.45);
+	color: var(--text-100);
+	height: 280px;
+	width: 280px;
+	max-width: 100%;
+}
+
+.book-card div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 100%;
+	padding: 40px;
+	height: 100%;
+	align-items: center;
+}
+
+.book-card h2 {
+	font-size: 1.5rem;
+}
+
+.book-card p {
+	font-size: 1.2rem;
+}
+
+.book-card button {
+	color: #ffffff;
+	align-self: center;
+	width: 100%;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.remove-btn {
+	background: var(--primary-100);
+}
+
+.remove-btn:hover {
+	background: var(--primary-200);
+}
+
+.no-books {
+	padding: 20px 0px;
+	text-align: center;
+	width: 100vw;
+	margin-top: 30vh;
+	font-weight: 700;
+}
+
+.read {
+	background: var(--read);
+}
+
+.read:hover {
+	background: #3a926a;
+}
+
+.not-read {
+	background: var(--not-read);
+}
+
+.not-read:hover {
+	background: #923a3a;
 }
