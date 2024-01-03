@@ -154,7 +154,7 @@ button {
 	left: 0;
 	background: rgb(0, 0, 0, 0.7);
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 }
 
 .closing-btn {
@@ -317,7 +317,7 @@ footer img:hover {
 
 .mobile-add {
 	display: none !important;
-	position: absolute;
+	position: fixed;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -359,5 +359,16 @@ footer img:hover {
 	}
 	.mobile-add {
 		display: flex !important;
+	}
+}
+
+@media screen and (max-width: 340px) {
+	footer {
+		flex-direction: column;
+		height: 80px;
+		padding: 20px;
+	}
+	.book-card div {
+		padding: 20px;
 	}
 }

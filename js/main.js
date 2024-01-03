@@ -17,7 +17,13 @@ const addBookToLibrary = (title, author, pages, read) => {
 };
 
 const formControl = (display = false) => {
-	display ? (form.style.display = "block") : (form.style.display = "none");
+	display
+		? ((form.style.display = "block"),
+		  (document.body.style.position = "fixed"),
+		  (document.body.style.top = `-${window.scrollY}px`))
+		: ((form.style.display = "none"),
+		  (document.body.style.position = ""),
+		  (document.body.style.top = ""));
 };
 
 const displayLibrary = () => {
