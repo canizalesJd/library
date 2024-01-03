@@ -1,5 +1,6 @@
 const myLibrary = [];
 const form = document.querySelector(".form-modal");
+const formContainer = document.querySelector(".new-book-form-container");
 
 class Book {
 	constructor(title, author, pages, read = false) {
@@ -41,4 +42,9 @@ form.addEventListener("submit", (e) => {
 const addButton = document.getElementById("add-book");
 addButton.addEventListener("click", () => {
 	formControl(true);
+});
+
+const closeButton = document.querySelector(".closing-btn");
+closeButton.addEventListener("click", () => {
+	formControl(false);
 });

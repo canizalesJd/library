@@ -7,16 +7,16 @@
 }
 
 :root {
-	--primary-100: #c21d03;
-	--primary-200: #fd5732;
-	--primary-300: #ffb787;
-	--accent-100: #393939;
-	--accent-200: #bebebe;
-	--text-100: #232121;
-	--text-200: #4b4848;
-	--bg-100: #fbfbfb;
-	--bg-200: #f1f1f1;
-	--bg-300: #c8c8c8;
+	--primary-100: #26a69a;
+	--primary-200: #408d86;
+	--primary-300: #cdfaf6;
+	--accent-100: #80cbc4;
+	--accent-200: #43a49b;
+	--text-100: #263339;
+	--text-200: #728f9e;
+	--bg-100: #e0f2f1;
+	--bg-200: #d0ebea;
+	--bg-300: #ffffff;
 }
 
 body {
@@ -31,7 +31,7 @@ body {
 header {
 	padding: 20px;
 	background: var(--accent-100);
-	color: #fafafa;
+	color: var(--text-100);
 }
 
 nav {
@@ -82,7 +82,7 @@ nav {
 	font-family: inherit;
 	margin: 5px 0px;
 	font-size: 1rem;
-	font-weight: 400;
+	font-weight: f400;
 }
 
 input[type="submit"] {
@@ -104,6 +104,14 @@ input[type="submit"] {
 	margin-left: 10px;
 }
 
+button {
+	background: transparent;
+	outline: none;
+	cursor: pointer;
+	box-shadow: none;
+	border: none;
+}
+
 .button {
 	cursor: pointer;
 	border: none;
@@ -117,8 +125,9 @@ input[type="submit"] {
 }
 
 .submit-btn {
-	background-color: var(--primary-200);
-	color: #ffffff;
+	background: var(--primary-100);
+	color: #fafafa;
+
 	width: 90%;
 	border-radius: 10px;
 	padding: 12px;
@@ -126,15 +135,47 @@ input[type="submit"] {
 }
 
 .submit-btn:hover {
-	transition: 200ms;
-	background-color: var(--primary-100);
+	background: var(--primary-200);
 }
 
 .form-modal {
+	/* display: none; */
 	position: absolute;
 	top: 0;
 	left: 0;
 	background: rgb(0, 0, 0, 0.7);
 	width: 100vw;
 	height: 100vh;
+}
+
+.closing-btn {
+	margin-top: 10px;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	border-radius: 100%;
+	padding: 4px;
+	background-color: var(--primary-100);
+	color: #fafafa;
+}
+
+.closing-btn span {
+	font-size: 18px;
+}
+
+.closing-btn:hover {
+	background: var(--primary-200);
+}
+
+.add-book-btn {
+	transition: 300ms;
+	color: var(--text-100);
+	border: 2px solid var(--text-100);
+	border-radius: 10px;
+}
+
+.add-book-btn:hover {
+	transition: 300ms;
+	background: var(--text-100);
+	color: var(--bg-100);
 }
