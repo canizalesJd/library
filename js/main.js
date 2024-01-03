@@ -79,7 +79,11 @@ form.addEventListener("submit", (e) => {
 });
 
 const addButton = document.getElementById("add-book");
+const addButton_Mobile = document.querySelector(".mobile-add");
 addButton.addEventListener("click", () => {
+	formControl(true);
+});
+addButton_Mobile.addEventListener("click", () => {
 	formControl(true);
 });
 

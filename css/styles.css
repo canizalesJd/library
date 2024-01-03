@@ -16,7 +16,7 @@
 	--text-200: #728f9e;
 	--bg-100: #e0f2f1;
 	--bg-200: #d0ebea;
-	--bg-300: #ffffff;
+	--bg-300: #fafafa;
 	--read: #26a66c;
 	--not-read: #a62626;
 }
@@ -26,15 +26,17 @@ body {
 	font-size: 18px;
 	width: 100vw;
 	min-height: 100vh;
-	background: var(--bg-100);
+	background: var(--bg-300);
 	color: var(--text-100);
 	overflow-x: hidden;
+	min-height: 100vh;
 }
 
 header {
-	padding: 20px;
-	background: var(--bg-200);
+	display: flex;
+	background: var(--bg-300);
 	color: var(--text-100);
+	height: 80px;
 }
 
 nav {
@@ -47,7 +49,7 @@ nav {
 
 .new-book-form-container {
 	display: block;
-	background-color: var(--bg-100);
+	background-color: var(--bg-300);
 	border-radius: 10px;
 	width: 300px;
 	max-width: 95vw;
@@ -189,6 +191,10 @@ button {
 	color: var(--bg-100);
 }
 
+.books-container {
+	min-height: calc(100vh - 140px);
+}
+
 .books-display {
 	display: grid;
 	gap: 20px;
@@ -214,7 +220,7 @@ button {
 	color: var(--text-100);
 	height: 280px;
 	width: 280px;
-	max-width: 100%;
+	max-width: 90%;
 }
 
 .book-card div {
@@ -282,18 +288,17 @@ button {
 }
 
 footer {
-	position: absolute;
 	bottom: 0;
 	left: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 25px;
 	min-width: 100%;
+	height: 60px;
 	text-align: center;
 	transition: 200ms;
 	color: var(--text-100);
-	background: var(--bg-200);
+	background: var(--bg-300);
 }
 
 footer a {
@@ -308,4 +313,51 @@ footer img {
 
 footer img:hover {
 	transform: scale(1.2);
+}
+
+.mobile-add {
+	display: none !important;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	right: 20px;
+	bottom: 40px;
+	background: var(--text-100);
+	border-radius: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.mobile-add span {
+	color: var(--bg-300);
+}
+
+@media screen and (max-width: 950px) {
+	header nav {
+		width: 90vw;
+	}
+	.books-display {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.books-display {
+		display: flex;
+		flex-direction: column;
+		margin: auto;
+		align-items: center;
+		justify-content: center;
+		width: 90vw;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	header nav button {
+		display: none;
+	}
+	.mobile-add {
+		display: flex !important;
+	}
 }
